@@ -1,7 +1,13 @@
 alias reload='. ~/.zshrc'
 
+#sudo pacman -S xsel
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'
+
 # Pipe my public key to my clipboard.
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+
+
 alias cls='clear'
 alias vi='vim'
 alias ll='ls -la'

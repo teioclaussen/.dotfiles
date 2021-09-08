@@ -10,6 +10,7 @@ alias multiop="cd ~/git/proj-multiop"
 alias sportium="cd ~/git/proj-sportium"
 alias tdo="cd ~/git/proj-tdo"
 alias mit="cd ~/git/proj-mit"
+alias ls="colorls --sd -A"
 
 # Navigation
 alias ..="cd .."

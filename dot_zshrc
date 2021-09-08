@@ -11,7 +11,7 @@ export PYTHONPATH=:/Users/marcello/git/genbet-proj-multiop/sportsbook/lib/sports
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-plugins=(git sudo colored-man-pages docker zsh-autosuggestions fast-syntax-highlighting osx)
+plugins=(git sudo colored-man-pages docker zsh-autosuggestions fast-syntax-highlighting osx fzf)
 
 source $ZSH/oh-my-zsh.sh
 

@@ -7,36 +7,32 @@ fi
 
 export ZSH="/Users/marcello/.oh-my-zsh"
 
-export PYTHONPATH=:/Users/marcello/git/genbet-proj-multiop/sportsbook/lib/sportsbook_markets:/Users/marcello/git/genbet-proj-multiop/sportsbook/lib/sportsbook_types:/Users/marcello/git/genbet-proj-multiop/retail/apps/admin/python:/Users/marcello/git/genbet-proj-multiop/playtech-IMS/api/python:/Users/marcello/git/genbet-proj-multiop/sportsbook/apps/python:/Users/marcello/git/genbet-proj-multiop/feeds/python:/Users/marcello/git/genbet-proj-multiop/python/lib:/Users/marcello/git/genbet-proj-multiop/python/appserv:/Users/marcello/git/genbet-proj-multiop/sportsbook/lib/custrisk_types:/Users/marcello/git/genbet-proj-multiop/custacct/python:/Users/marcello/git/genbet-proj-multiop/custacct/lib/custacct_types:/Users/marcello/git/genbet-proj-multiop/bonus/lib/bonus_engine:/Users/marcello/git/genbet-proj-multiop/bonus/lib/bonus:/Users/marcello/git/genbet-proj-multiop/userauth/python:/Users/marcello/git/genbet-proj-multiop/resources/db/oracle:/Users/marcello/git/genbet-proj-multiop/playtech-IMS/apps/python:/Users/marcello/git/genbet-proj-multiop/sportsbook/apps/python_reports/:/Users/marcello/git/genbet-proj-multiop/sportsbook_replication/python:/Users/marcello/git/genbet-proj-multiop/admin/python:/Users/marcello/git/genbet-proj-multiop/algos/:/Users/marcello/git/genbet-proj-multiop/libcomms/:/Users/marcello/git/genbet-proj-multiop/libconfig/:/Users/marcello/git/genbet-proj-multiop/libservice/:/Users/marcello/git/genbet-proj-multiop/libsql/:/Users/marcello/git/genbet-proj-multiop/libutil/:/Users/marcello/git/genbet-proj-multiop/libutil/lib/libutil:/Users/marcello/git/genbet-proj-multiop/libutil/lib/libasync:/Users/marcello/git/genbet-proj-multiop/logic_engine/lib/logic_engine:/Users/marcello/git/genbet-proj-multiop/libconfig/lib/config_defn:/Users/marcello/git/genbet-proj-multiop/libcomms/:/Users/marcello/git/genbet-proj-multiop/libconfig/:/Users/marcello/git/genbet-proj-multiop/libservice/:/Users/marcello/git/genbet-proj-multiop/libsql/:/Users/marcello/git/genbet-proj-multiop/libutil/:/Users/marcello/git/genbet-proj-multiop/libconfig/lib:/Users/marcello/git/genbet-proj-multiop/libconfig/lib/config_defn:/Users/marcello/git/genbet-proj-multiop/sportsbook/lib/sportsbook_types/sportsbook_types:/Users/marcello/git/genbet-proj-multiop/libconfig/lib/config_client/config_client/:/Users/marcello/git/genbet-proj-multiop/libconfig/lib/config_client:/Users/marcello/git/genbet-proj-multiop/sportsbook/apps/ev_mgmt_service/ev_mgmt_service:/Users/marcello/git/genbet-proj-multiop/sportsbook/apps/ev_mgmt_service:/Users/marcello/git/genbet-proj-multiop/apps/ev_mgmt_service/ev_mgmt_service/americanfootball:/Users/marcello/git/genbet-proj-multiop/apps/ev_mgmt_service/ev_mgmt_service/badminton:/Users/marcello/git/genbet-proj-multiop/apps/ev_mgmt_service/ev_mgmt_service/baseball:/Users/marcello/git/genbet-proj-multiop/apps/ev_mgmt_service/ev_mgmt_service/basketball:/Users/marcello/git/genbet-proj-multiop/apps/ev_mgmt_service/ev_mgmt_service/darts:/Users/marcello/git/genbet-proj-multiop/apps/ev_mgmt_service/ev_mgmt_service/football:/Users/marcello/git/genbet-proj-multiop/apps/ev_mgmt_service/ev_mgmt_service/handball:/Users/marcello/git/genbet-proj-multiop/apps/ev_mgmt_service/ev_mgmt_service/icehockey:/Users/marcello/git/genbet-proj-multiop/apps/ev_mgmt_service/ev_mgmt_service/rugby:/Users/marcello/git/genbet-proj-multiop/apps/ev_mgmt_service/ev_mgmt_service/tennis:/Users/marcello/git/genbet-proj-multiop/apps/ev_mgmt_service/ev_mgmt_service/volleyball:/Users/marcello/git/genbet-proj-multiop/sportsbook/lib/bet_common_types:/Users/marcello/git/genbet-proj-multiop/bonus/lib/bonus_types:/Users/marcello/git/genbet-proj-multiop/libutil/lib/librecords
-
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(git sudo colored-man-pages docker zsh-autosuggestions fast-syntax-highlighting osx fzf)
 
 source $ZSH/oh-my-zsh.sh
 
-#####ALIASES#####
-alias vi="vim"
-alias cat="bat"
-alias reload="source ~/.zshrc"
-alias gen-ctl='python ~/git/proj-multiop/app_control/control.py'
-alias find="find . -name"
-alias zshconfig="chezmoi edit ~/.zshrc"
-alias codere="cd ~/git/proj-codere"
-alias multiop="cd ~/git/proj-multiop"
-alias sportium="cd ~/git/proj-sportium"
-alias tdo="cd ~/git/proj-tdo"
-alias mit="cd ~/git/proj-mit"
-
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-
 #####Navigation shortcuts#####
 bindkey "[D" backward-word
 bindkey "[C" forward-word
 bindkey "^[a" beginning-of-line
 bindkey "^[e" end-of-line
+
+#load aliases
+if [ -f ~/.aliases ]; then
+  . ~/.aliases
+fi
+
+# Load functions
+if [ -f ~/.functions ]; then
+  . ~/.functions
+fi
+
+# Load exports
+if [ -f ~/.exports ]; then
+  . ~/.exports
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
